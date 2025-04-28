@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S. S. Chauhan & Company | Chartered Accountants</title>
+  <meta name="description" content="Premier chartered accounting firm specializing in audit, tax, and business advisory services with 7+ years of excellence.">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
+  
+  <!-- Tailwind with custom config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            },
+            dark: '#0f172a',
+            light: '#f8fafc',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'fade-in': 'fadeIn 1s ease-in',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Alpine.js for interactivity -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  
+  <!-- AOS for scroll animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom styles -->
+  <style>
+    .gradient-text {
+      background: linear-gradient(90deg, #0ea5e9 0%, #6366f1 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .glass-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .dark .glass-card {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .shape-blob {
+      border-radius: 30% 50% 20% 40%;
+      animation: transform 20s ease-in-out infinite both alternate;
+    }
+    
+    @keyframes transform {
+      0%, 100% { border-radius: 30% 50% 20% 40%; }
+      33% { border-radius: 50% 30% 40% 20%; }
+      66% { border-radius: 40% 20% 30% 50%; }
+    }
+  </style>
+</head>
+  <!-- Header -->
+  <header class="fixed top-0 w-full z-40 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="flex items-center space-x-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+        </svg>
+        <span class="text-xl font-bold bg-gradient-to-r from-primary-600 to-blue-600 dark:from-primary-400 dark:to-blue-400 bg-clip-text text-transparent">S. S. Chauhan & Company</span>
+      </a>
+      
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="https://sschauhan.co.in" class="text-sm font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Home</a>
+        <a href="#about" class="text-sm font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">About</a>
+        <a href="downloads.html" class="text-sm font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Downloads</a>
+        <a href="#services" class="text-sm font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Services</a>
+        <a href="#team" class="text-sm font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Team</a>
+        <a href="#clients" class="text-sm font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Clients</a>
+        <a href="https://instagram.com/shantanu.chauhan27" class="text-sm font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Contact</a>
+        <a href="#contact" class="px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white text-sm font-medium rounded-lg transition-colors shadow-md hover:shadow-lg">Get Started</a>
+      </nav>
+      
+      
+    </div>
+  </header>
+
+
+
+
+<body class="pt-24">
+  <div class="container">
+    <h1></h1>
+    
+    <!-- Embed your Google Apps Script Web App -->
+    <iframe 
+      src="https://script.google.com/macros/s/AKfycbxfjr4gEgXCFTYarjpGbrgxFrveqpNpKW7TVIzD-HO_vgFLpBd2Bz5DTutmCysoNOkH/exec?Embed=true" 
+      style="width: 100%; height: 400px; border: none;"
+      onload="adjustIframeHeight(this)"
+    ></iframe>
+  </div>
+
+  <script>
+    // Adjust iframe height based on content
+    function adjustIframeHeight(iframe) {
+      iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+    }
+    
+    // Optional: Handle cross-iframe communication
+    window.addEventListener('message', function(event) {
+      if (event.origin !== "https://script.google.com/macros/s/AKfycbxfjr4gEgXCFTYarjpGbrgxFrveqpNpKW7TVIzD-HO_vgFLpBd2Bz5DTutmCysoNOkH/exec") return;
+      
+      // Handle messages from the iframe
+      console.log('Message from iframe:', event.data);
+    });
+  </script>
+</body>
+</html>
