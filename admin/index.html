@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+function checkCredentials(event) {
+    event.preventDefault(); // Prevent form submission
+
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    fetch('pw.json')
+        .then(response => response.json())
+        .then(users => {
+            const user = users.find(u => u.username === username && u.password === password);
+            if (user) {
+                localStorage.setItem('loggedInUser', JSON.stringify(user));
+                window.location.href = 'landing.html';
+            } else {
+                alert("Incorrect username or password.");
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching credentials:', error);
+            alert("Error in authentication process.");
+        });
+}
+</script>
+
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <h2>Login</h2>
+        <form onsubmit="checkCredentials(event)">
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
