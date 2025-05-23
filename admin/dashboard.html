@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Status Dashboard</title>
+    <link rel="stylesheet" href="/assets/css/dashboardstyles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+               <div class="logo"> <img src="/assets/images/calogo.png" alt="Logo" class="logo"> </div>
+            <h1 class="firm-name">S. S. CHAUHAN & COMPANY</h1>
+         </div>
+
+
+            
+    
+        	    <!-- User Info -->
+    <div class="welcome-container">
+      <p id="welcome"></p>
+      <p id="role"></p>
+      <button id="logoutButton" class="logout-button">Logout</button>
+</div>
+
+ <div style="text-align:center; margin: 10px 0;">
+      <a href="https://docs.google.com/spreadsheets/d/16lTW8SWz_zqj-KoHF9jwHEIAUNAgKKvoF-XB7NcyFBc/edit?usp=sharing" target="_blank" style="font-size: 16px; color: #ffffff; text-decoration: none;">
+        Google Sheet
+      </a>
+    </div>
+
+        <div class="dashboard">
+            <div class="dashboard-header">
+                <h2 class="dashboard-title">Task Management Dashboard</h2>
+                <div class="filters">
+                    <div class="filter-group">
+                        <label class="filter-label">Client</label>
+                        <input type="text" class="filter-input" id="clientFilter" placeholder="Filter by client...">
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label">Task</label>
+                        <input type="text" class="filter-input" id="taskFilter" placeholder="Filter by task...">
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label">Status</label>
+                        <select class="filter-input" id="statusFilter">
+    <option value="">All Status</option>
+    <option value="Not Started">Not Started</option>
+    <option value="In Progress">In Progress</option>
+    <option value="Completed">Completed</option>
+    <option value="On Hold">On Hold</option>
+    <option value="Delayed">Delayed</option>
+    <option value="Waiting for Input">Waiting for Input</option>
+    <option value="Cancelled">Cancelled</option>
+    <option value="Reviewed">Reviewed</option>
+</select>
+
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label">Due Date</label>
+                        <input type="date" class="filter-input" id="dueDateFilter">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="table-container">
+                <div id="loadingMessage" class="loading">Loading tasks...</div>
+                <table class="task-table" id="taskTable" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th data-sort="client" class="sortable">Client</th>
+                            <th data-sort="task" class="sortable">Task</th>
+                            <th data-sort="dueDate" class="sortable">Due Date</th>
+                            <th data-sort="status" class="sortable">Status</th>
+                            <th data-sort="completed" class="sortable">Progress</th>
+                        </tr>
+                    </thead>
+                    <tbody id="taskTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/js/dashboardscript.js"></script>
+      <script>
+    window.onload = function() {
+      const userData = localStorage.getItem('loggedInUser');
+      if (!userData) {
+        alert("You must log in first.");
+        window.location.href = 'index.html';
+        return;
+      }
+
+      const user = JSON.parse(userData);
+      document.getElementById('welcome').textContent = `Welcome back, ${user.name}..!`;
+      document.getElementById('role').textContent = `Role: ${user.role}`;
+    }
+
+
+
+    function logout() {
+      localStorage.removeItem('loggedInUser');
+      window.location.href = 'index.html';
+    }
+  </script>
+
+</body>
+</html>
