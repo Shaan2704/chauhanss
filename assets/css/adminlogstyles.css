@@ -1,0 +1,213 @@
+/* === General Body Styling === */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+}
+
+/* === Header and Logo === */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 40px;
+  background-color: #343a40;
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+  object-fit: contain;
+}
+
+.top-header h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* === Headings === */
+h1 {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* === Filters Section === */
+#filters {
+  display: flex;
+  justify-content: space-between; /* Distributes the filters evenly */
+  gap: 15px; /* Adds space between each input */
+  flex-wrap: wrap; /* Ensures filters wrap into multiple lines if necessary */
+  margin: 20px auto; /* Centers the filters */
+  max-width: 900px; /* Max width to ensure it doesn't stretch too far */
+}
+
+#filters input {
+  padding: 8px;
+  width: 22%; /* Adjusts the width of each input to fit better */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Prevents padding from affecting width */
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  #filters {
+    flex-direction: column; /* Stacks filters vertically on smaller screens */
+    align-items: center; /* Centers the inputs */
+  }
+
+  #filters input {
+    width: 80%; /* Makes inputs take up more space on small screens */
+    margin-bottom: 10px; /* Adds some space between stacked filters */
+  }
+}
+
+/* === Task Table === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  margin-bottom: 40px;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+tr.due-soon {
+  background-color: #fff3cd;
+}
+
+tr.overdue {
+  background-color: #f8d7da;
+}
+
+tr.due-soon td {
+  background-color: #fff3cd !important;
+  color: #856404;
+}
+
+tr.overdue td {
+  background-color: #f8d7da !important;
+  color: #721c24;
+}
+
+/* === Status Bar Styling === */
+.status-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress-bar {
+  width: 100px;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #28a745;
+  transition: width 0.3s ease;
+}
+
+/* === Login Page Styling === */
+.login-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+  margin: 100px auto;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* === Buttons === */
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* === User Info Panel (Landing Page) === */
+.user-info {
+  text-align: center;
+  margin: 10px 0;
+}
+
+#welcome {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#role {
+  font-size: 16px;
+}
+
+.logo-container {
+  background-color: #ffffff;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/* To style the logo itself */
+.logo {
+  height: 50px;
+  width: 80px;
+  object-fit: contain;
+}
+
+.logout-button {
+  padding: 8px 16px;
+  background-color: #bd4f00;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: #cc0000;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
