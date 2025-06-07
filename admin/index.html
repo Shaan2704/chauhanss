@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Due Dates Tracker</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <h1>Work Due Dates Tracker</h1>
+
+        <div class="controls">
+            <div class="month-nav">
+                <button id="prevMonthBtn" class="nav-button"><i class="fas fa-arrow-left"></i> Previous</button>
+                <span id="currentMonthDisplay" class="month-display"></span>
+                <button id="nextMonthBtn" class="nav-button">Next <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <div class="filter-group">
+                <label for="statusFilter">Filter by Status:</label>
+                <select id="statusFilter">
+                    <option value="">All Statuses</option>
+                    <option value="Pending">Pending</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                    </select>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="https://docs.google.com/spreadsheets/d/1JJzuV1e5bfKzD19YIpuOj6F-SunAhr6yttNgAirPN-g/edit?usp=sharing" target="_blank" class="sheet-link">
+    <i class="fas fa-file-spreadsheet"></i>Open Google Sheet</a>
+        </div>
+
+        <div class="table-container">
+            <table id="taskTable">
+                <thead>
+                    <tr id="tableHeaders">
+                        </tr>
+                </thead>
+                <tbody id="taskTableBody">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
