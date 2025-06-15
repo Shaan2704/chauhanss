@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Downloads</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f3f4f7;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .downloads-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .download-card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      cursor: pointer;
+    }
+
+    .download-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .file-icon {
+      font-size: 28px;
+      color: #4a90e2;
+      flex-shrink: 0;
+    }
+
+    .file-details {
+      flex-grow: 1;
+    }
+
+    .file-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .file-type {
+      font-size: 14px;
+      color: #777;
+    }
+
+    .download-button {
+      color: #4a90e2;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    .download-card:hover .download-button {
+      color: #1d70b8;
+    }
+  </style>
+</head>
+<body>
+  <h1>📂 Downloads</h1>
+  <p style="text-align: center; color: #666; margin-bottom: 25px; font-size: 15px;">
+    <em>For Advanced ITT purpose only. Prepared and uploaded by CA. Shantanu Singh Chauhan</em>
+  </p>
+  <div class="downloads-container" id="downloadsContainer"></div>
+
+  <script>
+    const files = [
+      { name: "Sales Data", url: "sales_data.xlsx" }
+    ];
+
+    const iconMap = {
+      pdf: "fa-file-pdf",
+      doc: "fa-file-word",
+      docx: "fa-file-word",
+      ppt: "fa-file-powerpoint",
+      pptx: "fa-file-powerpoint",
+      xls: "fa-file-excel",
+      xlsx: "fa-file-excel",
+      zip: "fa-file-archive",
+      rar: "fa-file-archive",
+      mp3: "fa-file-audio",
+      wav: "fa-file-audio",
+      default: "fa-file"
+    };
+
+    const container = document.getElementById("downloadsContainer");
+
+    files.forEach(file => {
+      const fileExt = file.name.split('.').pop().toLowerCase();
+      const iconClass = iconMap[fileExt] || iconMap.default;
+
+      const card = document.createElement("a");
+      card.href = file.url;
+      card.className = "download-card";
+      card.setAttribute("download", file.name);
+      card.innerHTML = `
+        <i class="fa-solid ${iconClass} file-icon"></i>
+        <div class="file-details">
+          <div class="file-name">${file.name}</div>
+          <div class="file-type">${fileExt.toUpperCase()} File</div>
+        </div>
+        <i class="fa-solid fa-download download-button"></i>
+      `;
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>
