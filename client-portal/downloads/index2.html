@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAN & YOB Validation</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Alpine.js CDN - IMPORTANT for dropdowns to work -->
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header"></div>
+
+    <!-- Main Content Container with added vertical margin for spacing -->
+    <div class="my-12 w-11/12 sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-2/5 2xl:w-1/3 bg-white p-6 sm:p-8 md:p-10 rounded-xl shadow-lg animate-fadeIn">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Validate Your Credentials</h2>
+
+        <form id="validationForm" class="space-y-6">
+            <div>
+                <label for="pan" class="block text-sm font-medium text-gray-700 mb-1">PAN (Permanent Account Number)</label>
+                <input type="text" id="pan" name="pan" required
+                       class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm
+                              focus:ring-primary-500 focus:border-primary-500 sm:text-sm uppercase
+                              transition-colors duration-200">
+            </div>
+
+            <div>
+                <label for="yob" class="block text-sm font-medium text-gray-700 mb-1">Year of Birth (YYYY)</label>
+                <input type="text" id="yob" name="yob" required pattern="\d{4}" maxlength="4"
+                       class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm
+                              focus:ring-primary-500 focus:border-primary-500 sm:text-sm
+                              transition-colors duration-200">
+            </div>
+
+            <button type="submit" id="submitButton"
+                    class="w-full flex justify-center items-center py-3 px-4 border border-transparent
+                           rounded-md shadow-sm text-lg font-semibold text-white bg-green-600
+                           hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2
+                           focus:ring-green-500 transition-all duration-300 transform hover:scale-105">
+                <span id="buttonText">Validate</span>
+                <div id="loadingSpinner" class="loading-spinner hidden ml-3"></div>
+            </button>
+        </form>
+
+        <div id="resultContainer" class="mt-8 p-4 rounded-lg text-center hidden">
+            <!-- Results will be displayed here -->
+        </div>
+    </div>
+
+    <!-- Footer Placeholder -->
+    <div id="footer"></div>
+
+    <!-- Inline script to load header and footer -->
+    <script>
+        /**
+         * Function to load external HTML components into specified placeholders.
+         * @param {string} url - The URL of the HTML component to load (e.g., '/components/header.html').
+         * @param {string} elementId - The ID of the DOM element where the content should be inserted.
+         */
+        async function loadHtmlComponent(url, elementId) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status} for ${url}`);
+                }
+                const html = await response.text();
+                const placeholderElement = document.getElementById(elementId);
+                if (placeholderElement) {
+                    placeholderElement.innerHTML = html;
+                } else {
+                    console.error(`Placeholder element with ID '${elementId}' not found.`);
+                }
+            } catch (error) {
+                console.error(`Failed to load HTML component from ${url}:`, error);
+            }
+        }
+
+        // Load header and footer components when the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            loadHtmlComponent('/components/header.html', 'header');
+            loadHtmlComponent('/components/footer.html', 'footer');
+        });
+    </script>
+
+    <!-- Link to external JavaScript file for form logic -->
+    <script src="script.js"></script>
+</body>
+</html>

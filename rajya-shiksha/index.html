@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audit Dashboard</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+    <!-- Adjusted container classes for better responsiveness -->
+    <div class="container bg-white p-4 sm:p-6 md:p-8 rounded-2xl shadow-xl max-w-full lg:max-w-4xl xl:max-w-6xl">
+	<h1 class="text-3xl font-bold text-center text-gray-800 mb-4">M.P. Rajya Shiksha Jabalpur Division Audit</h1>
+	<p class="text-center text-gray-600 text-sm">Developed by CA. Shantanu Singh Chauhan</p>
+
+        <!-- Main Tab Navigation -->
+        <div class="flex border-b border-gray-200 mb-6">
+            <button id="tabOnsiteAudit" class="tab-button flex-1 py-3 px-4 text-center text-gray-700 font-medium rounded-tl-lg transition-colors duration-200 hover:bg-gray-100 active">
+                Onsite Audit
+            </button>
+            <button id="tabConsolidation" class="tab-button flex-1 py-3 px-4 text-center text-gray-700 font-medium transition-colors duration-200 hover:bg-gray-100">
+                Consolidation
+            </button>
+            <button id="tabInsights" class="tab-button flex-1 py-3 px-4 text-center text-gray-700 font-medium rounded-tr-lg transition-colors duration-200 hover:bg-gray-100">
+                Insights
+            </button>
+        </div>
+
+        <!-- Dashboard Content Container -->
+        <div id="dashboardContent" class="space-y-4">
+            <!-- Loading Indicator -->
+            <div id="loadingIndicator" class="flex flex-col items-center justify-center py-12">
+                <div class="loader"></div>
+                <p class="mt-4 text-gray-600">Loading data...</p>
+            </div>
+            <!-- Data will be dynamically loaded here -->
+        </div>
+
+        <!-- Message Box for notifications/errors -->
+        <div id="messageBox" class="message-box"></div>
+    </div>
+
+    <!-- Link to your custom JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S. S. Chauhan & Company | Chartered Accountants</title>
+  <meta name="description" content="Upload your documents in a user-friendly manner.">
+
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
+
+  <!-- Tailwind with custom config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="/assets/css/home.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            },
+            dark: '#0f172a',
+            light: '#f8fafc',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom styles -->
+  <style>
+    .gradient-text {
+      background: linear-gradient(90deg, #0ea5e9 0%, #6366f1 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .hidden { display: none; }
+    .collapsible-tab {
+      background-color: #0284c7;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-align: left;
+      width: 100%;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    .collapsible-tab:hover {
+      background-color: #0369a1;
+    }
+    .collapsible-tab.active {
+      background-color: #075985;
+    }
+    .collapsible-tab svg {
+      transition: transform 0.3s;
+    }
+    .collapsible-tab svg.rotate-180 {
+      transform: rotate(180deg);
+    }
+    .collapsible-content {
+      padding: 12px 20px;
+      background-color: #f0f4f8;
+      border-radius: 8px;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body class="font-sans bg-light text-gray-800 transition-colors duration-300">
+
+  <!-- Header -->
+  <div id="header"></div>
+
+  <div class="pt-32 container mx-auto px-12">
+    <h2 class="text-2xl font-bold text-center mb-2">Documents Submission Portal</h2>
+
+    <!-- LLP & Partnership Registration -->
+    <div class="glass-card p-4 mb-4">
+      <button class="collapsible-tab flex items-center py-2 px-4" id="resume-toggle">
+        For LLP and Partnership Registration
+        <svg class="w-6 h-6 ml-2" id="resume-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.293 7.293a1 1 0 011.414 0L10 9.586l2.293-2.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+      </button>
+      <div id="resume-content" class="collapsible-content hidden mt-4">
+        <p class="mb-2">Before submitting the documents, make sure to keep all files ready for upload.</p>
+        <p class="font-semibold mb-1">Partners' Documents:</p>
+        <ul class="list-disc pl-6 mb-4">
+          <li>Passport Size Photo (File Upload)</li>
+          <li>PAN Card (Upload)</li>
+          <li>Aadhaar (Upload)</li>
+          <li>Bank Statement (Upload)</li>
+        </ul>
+        <p class="font-semibold mb-1">Registered Office Documents:</p>
+        <ul class="list-disc pl-6 mb-4">
+          <li>Electricity Bill (Upload)</li>
+          <li>Rent Agreement (Upload if rented)</li>
+        </ul>
+        <p class="mb-2">Please upload the required documents. Ensure all files are clear and self-attested.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeehKcK4Zh1sxhx2y7iU4aAPBLO_IQC82j3ZktG0Fts7a_jnQ/viewform?usp=dialog" class="mt-4 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors inline-block">
+          Submit Documents
+        </a>
+      </div>
+    </div>
+
+    <!-- Company Registration -->
+    <div class="glass-card p-4 mb-4">
+      <button class="collapsible-tab flex items-center py-2 px-4" id="photo-toggle">
+        Company (Pvt Ltd/Public Ltd) Registration
+        <svg class="w-6 h-6 ml-2" id="photo-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.293 7.293a1 1 0 011.414 0L10 9.586l2.293-2.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+      </button>
+      <div id="photo-content" class="collapsible-content hidden mt-4">
+        <p class="mb-2">Before submitting the documents, make sure to keep all files ready for upload.</p>
+        <p class="font-semibold mb-1">Documents from Directors and Subscribers:</p>
+        <ul class="list-disc pl-6 mb-4">
+          <li>PAN Card (Upload)</li>
+          <li>Aadhaar (Upload)</li>
+          <li>Voter ID (Upload)</li>
+          <li>Bank Statement (Upload)</li>
+          <li>Passport size photo (Upload)</li>
+        </ul>
+        <p class="font-semibold mb-1">Registered Office Documents:</p>
+        <ul class="list-disc pl-6 mb-4">
+          <li>Electricity Bill (Upload)</li>
+          <li>Rent Agreement (Upload if rented)</li>
+        </ul>
+        <p class="mb-2">Please upload the required documents. Ensure all files are clear and self-attested.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf3lvaq6gb3Ct8gGpnyLns85ZDD3Rhvt9Y9DMOgYhP8bH0eTQ/viewform" class="mt-4 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors inline-block">
+          Submit Documents
+        </a>
+      </div>
+    </div>
+
+    <!-- GST Registration -->
+    <div class="glass-card p-4 mb-4">
+      <button class="collapsible-tab flex items-center py-2 px-4" id="gst-toggle">
+        GST Registration
+        <svg class="w-6 h-6 ml-2" id="gst-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.293 7.293a1 1 0 011.414 0L10 9.586l2.293-2.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+      </button>
+      <div id="gst-content" class="collapsible-content hidden mt-4">
+        <p class="mb-2">Before submitting the documents, make sure to keep all files ready for upload.</p>
+        <p class="font-semibold mb-1">Documents of Proprietor/Partners/Directors:</p>
+        <ul class="list-disc pl-6 mb-4">
+          <li>PAN Card (Upload)</li>
+          <li>Aadhaar (Upload)</li>
+          <li>Passport size photo (Upload)</li>
+        </ul>
+        <p class="font-semibold mb-1">Registered Office Documents:</p>
+        <ul class="list-disc pl-6 mb-4">
+          <li>Electricity Bill (Upload)</li>
+          <li>Rent Agreement (Upload if rented)</li>
+        </ul>
+        <p class="mb-2">Please upload the required documents.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScUhVNxzfR_o-TwhPopLCWCtrvj3mlYQ06cIvbnHN_IR0I1wA/viewform" class="mt-4 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors inline-block">
+          Submit Documents
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <!-- JavaScript for collapsible tabs -->
+  <script>
+    function toggleSection(toggleId, contentId, iconId) {
+      const content = document.getElementById(contentId);
+      const icon = document.getElementById(iconId);
+      const isVisible = content.classList.contains('hidden');
+
+      if (isVisible) {
+        content.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+        document.getElementById(toggleId).classList.add('active');
+      } else {
+        content.classList.add('hidden');
+        icon.classList.remove('rotate-180');
+        document.getElementById(toggleId).classList.remove('active');
+      }
+    }
+
+    document.getElementById("resume-toggle").addEventListener("click", () => toggleSection('resume-toggle', 'resume-content', 'resume-icon'));
+    document.getElementById("photo-toggle").addEventListener("click", () => toggleSection('photo-toggle', 'photo-content', 'photo-icon'));
+    document.getElementById("gst-toggle").addEventListener("click", () => toggleSection('gst-toggle', 'gst-content', 'gst-icon'));
+  </script>
+
+<script>
+fetch("/components/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+      if (window.initMobileMenu) initMobileMenu(); // ✅ now safe to call!
+      if (window.Alpine) Alpine.initTree(document.getElementById("header"));
+    });
+
+    fetch("/components/footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data);
+  </script>
+
+<script src="/assets/js/main.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+</body>
+</html>

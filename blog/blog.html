@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S. S. Chauhan & Company | Chartered Accountants</title>
+  <meta name="description" content="Premier chartered accounting firm specializing in audit, tax, and business advisory services with 7+ years of excellence.">
+
+  <!-- Preload and Fonts -->
+  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind & Alpine -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/assets/js/tailwind-config.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+
+<body class="font-sans bg-light text-gray-800 dark:bg-dark dark:text-gray-200 transition-colors duration-300 pt-100">
+  
+  <!-- Header -->
+  <div id="header"></div>
+
+  <!-- Spacer Div with added margin-top to create space between header and body -->
+  <div class="spacer mt-10"></div> <!-- Add margin-top of 20 to create space -->
+
+  <!-- About Section -->
+ <!-- About Section -->
+<section id="about" class="py-20 pt-100 bg-primary-50 dark:bg-primary-900">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+      <!-- Make this the main heading -->
+      <h1 class="text-5xl md:text-6xl font-bold text-primary-600 dark:text-primary-400">
+        About Us
+      </h1>
+      <p class="text-lg text-gray-600 dark:text-gray-300 mt-4">
+        S. S. Chauhan & Company is a premier chartered accountancy firm with a team of experienced professionals dedicated to providing comprehensive financial solutions.
+      </p>
+    </div>
+
+    <div class="flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 mb-12 md:mb-0" data-aos="fade-right">
+        <div class="relative">
+          <div class="w-full h-96 bg-gray-200 dark:bg-gray-700 rounded-2xl overflow-hidden">
+            <img src="/assets/images/fin/office.jpg?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                 alt="Our office" 
+                 class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+
+      <div class="md:w-1/2 md:pl-12" data-aos="fade-left">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Trusted Financial Advisors Since <span class="gradient-text">2018</span>
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
+          S. S. Chauhan & Company is a premier chartered accountancy firm with a team of experienced professionals dedicated to providing comprehensive financial solutions.
+        </p>
+
+        <div class="space-y-6">
+          <div class="flex">
+            <div class="flex-shrink-0 mt-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <div class="ml-3">
+              <h3 class="text-lg font-medium text-gray-800 dark:text-white">Industry Expertise</h3>
+              <p class="mt-1 text-gray-600 dark:text-gray-400">
+                7+ years of experience across diverse industries and business sizes.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex">
+            <div class="flex-shrink-0 mt-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <div class="ml-3">
+              <h3 class="text-lg font-medium text-gray-800 dark:text-white">Client-Centric Approach</h3>
+              <p class="mt-1 text-gray-600 dark:text-gray-400">
+                Personalized solutions tailored to your specific business needs.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex">
+            <div class="flex-shrink-0 mt-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <div class="ml-3">
+              <h3 class="text-lg font-medium text-gray-800 dark:text-white">Technological Edge</h3>
+              <p class="mt-1 text-gray-600 dark:text-gray-400">
+                Leveraging cutting-edge tools for accurate and efficient service delivery.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <!-- Scripts -->
+<script>
+    fetch("/components/header.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("header").innerHTML = data);
+
+    fetch("/components/footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data);
+  </script>
+  
+<script src="/assets/js/theme-toggle.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

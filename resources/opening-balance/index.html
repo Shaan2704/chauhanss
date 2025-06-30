@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opening Balances | CA. Shantanu Singh Chauhan</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+<div class="header">
+    <div class="logo">
+        <img src="/assets/images/calogo.png" alt="Logo">
+    </div>
+    <div class="firm-name">Trial Balance Comparison Tool for Chartered Accountants</div>
+</div>
+
+<div style="text-align: center; color: white;">
+  <a href="/" style="color: inherit; text-decoration: none;">Return to Homepage</a>
+</div>
+
+<section class="host-box">
+    <h1>Hosted by CA. SHANTANU SINGH CHAUHAN</h1>
+    <p>Provide your feedbacks/queries at 7389968331 or mail to <a href="mailto:cashantanu.schauhan@gmail.com">cashantanu.schauhan@gmail.com</a></p>
+</section>
+
+        <div id="libraryError" class="error">
+            <p><strong>Library Loading Error:</strong> The Excel processing library could not be loaded. Please try one of the following solutions:</p>
+            <ol>
+                <li>Check your internet connection and refresh the page</li>
+                <li>Try a different browser (Chrome, Firefox, or Edge recommended)</li>
+            </ol>
+        </div>
+
+<div class="container">
+        <div class="instructions">
+    <h3>Instructions:</h3>
+    <p>SA 510 is crucial as it ensures auditors obtain sufficient evidence on opening balances to identify material misstatements and verify consistency in accounting policies for initial audit engagements.</p><br>
+<li>Compare current year’s trial balance with previous year’s trial balance.</li>
+<li>Focus on verifying opening balances and identifying differences.</li>
+<li>Upload Excel files as per the prescribed templates.</li>
+<li>The tool automatically detects differences between current year opening and previous year closing balances.</li>
+<p>Ignore differences arising from revenue or expense items, as these naturally reset each year.</p><br>
+
+<p>Download templates for uploading from the below link:</p>
+    <p>📄 <a href="Tally_Sample.xlsx" target="_blank">Tally Trial Balance Excel Format</a></p>
+    <p>📄 <a href="Other_Sample.xlsx" target="_blank">Other Software Excel Format</a></p>
+</div>
+
+        <div class="input-section">
+            <h2>Current Year Trial Balance</h2>
+            <div class="file-input">
+                <input type="file" id="currentYearFile" accept=".xlsx, .xls, .xlsm, .xlsb, .csv">
+                <small>Upload Excel or CSV file</small>
+            </div>
+            <div id="currentYearProgress" class="progress">
+                <div class="progress-bar">
+                    <div id="currentYearProgressBar" class="progress-bar-fill"></div>
+                </div>
+            </div>
+            <p>Or paste data below:</p>
+            <textarea id="currentYearData" placeholder="Paste current year trial balance data here..."></textarea>
+
+            <h2>Previous Year Trial Balance</h2>
+            <div class="file-input">
+                <input type="file" id="previousYearFile" accept=".xlsx, .xls, .xlsm, .xlsb, .csv">
+                <small>Upload Excel or CSV file</small>
+            </div>
+            <div id="previousYearProgress" class="progress">
+                <div class="progress-bar">
+                    <div id="previousYearProgressBar" class="progress-bar-fill"></div>
+                </div>
+            </div>
+            <p>Or paste data below:</p>
+            <textarea id="previousYearData" placeholder="Paste previous year trial balance data here..."></textarea>
+
+            <button id="compareBtn">Compare Trial Balances</button>
+            <div id="errorMsg" class="error" style="display: none;"></div>
+        </div>
+
+        <div id="resultSection" class="result-section">
+            <div class="tabs">
+                <button class="tab active" data-tab="comparisonTab">Opening Balance Comparison</button>
+                <button class="tab" data-tab="differencesTab">Differences</button>
+                <button class="tab" data-tab="additionsTab">Additions/Deletions</button>
+            </div>
+
+            <div id="comparisonTab" class="tab-panel active">
+                <h2>Opening Balance Comparison</h2>
+                <table id="comparisonTable">
+                    <thead>
+                        <tr>
+                            <th>Particulars</th>
+                            <th>Current Year Opening</th>
+                            <th>Previous Year Closing</th>
+                            <th>Difference</th>
+                        </tr>
+                    </thead>
+                    <tbody id="comparisonBody"></tbody>
+                </table>
+                <button id="downloadComparisonBtn" class="download-btn">Download Comparison</button>
+            </div>
+
+            <div id="differencesTab" class="tab-panel">
+                <h2>Differences</h2>
+                <table id="differencesTable">
+                    <thead>
+                        <tr>
+                            <th>Particulars</th>
+                            <th>Current Year Opening</th>
+                            <th>Previous Year Closing</th>
+                            <th>Difference</th>
+                        </tr>
+                    </thead>
+                    <tbody id="differencesBody"></tbody>
+                </table>
+                <button id="downloadDifferencesBtn" class="download-btn">Download Differences</button>
+            </div>
+
+            <div id="additionsTab" class="tab-panel">
+                <h2>Additions and Deletions</h2>
+                <div>
+                    <h3>New Accounts in Current Year</h3>
+                    <table id="additionsTable">
+                        <thead>
+                            <tr>
+                                <th>Particulars</th>
+                                <th>Opening Balance</th>
+                            </tr>
+                        </thead>
+                        <tbody id="additionsBody"></tbody>
+                    </table>
+                </div>
+                <div style="margin-top: 20px;">
+                    <h3>Accounts Removed from Previous Year</h3>
+                    <table id="deletionsTable">
+                        <thead>
+                            <tr>
+                                <th>Particulars</th>
+                                <th>Closing Balance (Previous Year)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="deletionsBody"></tbody>
+                    </table>
+                </div>
+                <button id="downloadAdditionsBtn" class="download-btn">Download Additions/Deletions</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

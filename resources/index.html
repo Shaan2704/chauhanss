@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S. S. Chauhan & Company | Chartered Accountants</title>
+  <meta name="description" content="Premier chartered accounting firm specializing in audit, tax, and business advisory services with 7+ years of excellence.">
+
+  <!-- Preload and Fonts -->
+  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind & Alpine -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/assets/js/tailwind-config.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/home.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+</head>
+
+<body class="font-sans bg-light text-gray-800 dark:bg-dark dark:text-gray-200 transition-colors duration-300">
+
+  <!-- Header -->
+  <div id="header"></div>
+
+  <!-- Spacer Div -->
+  <div class="custom-spacer"></div>
+
+  <section class="page-heading">
+    <h1>Resources</h1>
+  </section>
+
+  <div class="max-w-6xl mx-auto px-4 py-8"
+       x-data="tabManager"
+       x-init="loadTabs()">
+    <div class="grid md:grid-cols-4 gap-6">
+
+      <!-- Dynamic Tabs -->
+      <div class="space-y-2">
+        <template x-for="(links, category) in tabs" :key="category">
+          <button
+            @click="activeTab = category"
+            :class="{ 'bg-blue-600 text-white': activeTab === category }"
+            class="w-full px-4 py-2 border rounded text-left hover:bg-blue-100 capitalize">
+            <span x-text="category"></span>
+          </button>
+        </template>
+      </div>
+
+      <!-- Dynamic Link Display -->
+      <div class="md:col-span-3 space-y-4" id="tab-content">
+        <!-- Show the selected tab heading -->
+        <h2 class="text-2xl font-semibold" x-text="activeTab"></h2>
+
+        <!-- Display the links for the selected tab -->
+        <template x-for="link in tabs[activeTab]" :key="link.href">
+          <a :href="link.href"
+             class="block p-4 bg-white shadow rounded hover:bg-blue-50"
+             x-text="link.text">
+          </a>
+        </template>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <!-- Scripts -->
+  <script>
+fetch("/components/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+      if (window.initMobileMenu) initMobileMenu(); // ✅ now safe to call!
+      if (window.Alpine) Alpine.initTree(document.getElementById("header"));
+    });
+    
+    fetch("/components/footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data);
+
+  // Load client links from JSON
+  const tabManager = {
+    tabs: {},
+    activeTab: '',
+    loadTabs() {
+      fetch('resource-links.json')
+        .then(res => res.json())
+        .then(data => {
+          this.tabs = data;
+          this.activeTab = Object.keys(data)[0]; // auto-select first tab
+        })
+        .catch(err => console.error('Error loading tabs:', err));
+    }
+  };
+  </script>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+</body>
+</html>

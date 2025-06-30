@@ -1,0 +1,17 @@
+# robots.txt for sschauhan.co.in
+
+User-agent: *
+# Disallow internal components
+Disallow: /components/
+Disallow: /assets/
+Disallow: /admin/
+Disallow: /attendance/
+Disallow: /rajya-shiksha/
+
+
+
+# Allow everything else
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.sschauhan.co.in/seo/sitemap.xml

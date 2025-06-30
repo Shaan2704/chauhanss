@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S. S. Chauhan & Company | Chartered Accountants</title>
+  <meta name="description" content="Premier chartered accounting firm specializing in audit, tax, and business advisory services with 7+ years of excellence.">
+
+  <!-- Preload and Fonts -->
+  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind & Alpine -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/assets/js/tailwind-config.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/home.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+</head>
+<body class="font-sans bg-light text-gray-800 dark:bg-dark dark:text-gray-200 transition-colors duration-300 pt-100">
+  
+  <!-- Header -->
+  <div id="header"></div>
+
+<!-- Spacer Div -->
+<div class="custom-spacer"></div>
+
+<section class="page-heading mb-8">
+  <h1>Client Document Access</h1>
+</section>
+
+<!-- Main Content Container with added vertical margin for spacing -->
+<section class="flex justify-center">
+    <div class="w-11/12 sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-2/5 2xl:w-1/3 bg-white pt-6 sm:pt-6 md:pt-8 pb-10 px-6 sm:px-8 md:px-10 rounded-xl shadow-lg animate-fadeIn">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Client Login</h2>
+
+        <form id="validationForm" class="space-y-6">
+            <div>
+                <label for="pan" class="block text-sm font-medium text-gray-700 mb-1">PAN (Permanent Account Number)</label>
+                <input type="text" id="pan" name="pan" required
+                       class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm
+                              focus:ring-primary-500 focus:border-primary-500 sm:text-sm uppercase
+                              transition-colors duration-200">
+            </div>
+
+            <div>
+                <label for="yob" class="block text-sm font-medium text-gray-700 mb-1">Year of Birth (YYYY)</label>
+                <input type="password" id="yob" name="yob" required pattern="\d{4}" maxlength="4"
+                       class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm
+                              focus:ring-primary-500 focus:border-primary-500 sm:text-sm
+                              transition-colors duration-200">
+            </div>
+
+            <button type="submit" id="submitButton"
+                    class="w-full flex justify-center items-center py-3 px-4 border border-transparent
+                           rounded-md shadow-sm text-lg font-semibold text-white bg-green-600
+                           hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2
+                           focus:ring-green-500 transition-all duration-300 transform hover:scale-105">
+                <span id="buttonText">Validate</span>
+                <div id="loadingSpinner" class="loading-spinner hidden ml-3"></div>
+            </button>
+        </form>
+
+        <div id="resultContainer" class="mt-8 p-4 rounded-lg text-center hidden">
+            <!-- Results will be displayed here -->
+        </div>
+    </div>
+  </section>
+
+
+  <div id="footer"></div>
+
+  <!-- Scripts -->
+  <script>
+fetch("/components/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+      if (window.initMobileMenu) initMobileMenu(); // ✅ now safe to call!
+      if (window.Alpine) Alpine.initTree(document.getElementById("header"));
+    });
+    fetch("/components/footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data);
+  </script>
+
+<script src="script.js"></script>
+<script src="/assets/js/main.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+
+</body>
+</html>

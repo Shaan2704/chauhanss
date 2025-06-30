@@ -1,0 +1,57 @@
+/* General body styling */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Keyframe animation for fade-in effect on the main container */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Utility class for applying the fade-in animation */
+.animate-fadeIn {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Styling for the loading spinner */
+.loading-spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #10B981; /* Tailwind green-500 */
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+}
+
+/* Keyframe animation for the spinner rotation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Styling for the tick icon */
+.tick-icon {
+    color: #10B981; /* Tailwind green-500 */
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+}

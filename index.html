@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S. S. Chauhan & Company | Chartered Accountants</title>
+  <meta name="description" content="Premier chartered accounting firm specializing in audit, tax, and business advisory services with 7+ years of excellence.">
+
+  <!-- Preload and Fonts -->
+  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind & Alpine -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/assets/js/tailwind-config.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/home.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+
+<body class="font-sans bg-light text-gray-800 dark:bg-dark dark:text-gray-200 transition-colors duration-300">
+  
+  <!-- Header -->
+ <div id="header"></div>
+
+<div class="custom-spacer"></div>
+  <!-- Hero Section with Full-Width Background Slider -->
+<section id="home" class="relative min-h-[80vh] flex items-center justify-center px-6 pt-20 z-10 text-white">
+
+  <!-- Background Slider -->
+  <div class="absolute inset-0 z-0">
+    <div id="slider" class="w-full h-full relative">
+      <img src="/assets/images/fin/fin1.jpg?auto=format&fit=crop&w=1920&q=80" class="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000" alt="Finance 1">
+      <img src="/assets/images/fin/fin2.jpg?auto=format&fit=crop&w=1920&q=80" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" alt="Finance 2">
+      <img src="/assets/images/fin/fin3.jpg?auto=format&fit=crop&w=1920&q=80" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" alt="Finance 3">
+      <img src="/assets/images/fin/fin4.jpg?auto=format&fit=crop&w=1920&q=80" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" alt="Finance 4">
+    </div>
+    <!-- Optional: Dark overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+  </div>
+
+  <!-- Foreground Text -->
+  <div class="relative z-10 max-w-3xl text-center">
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6" >
+      <span class="gradient-text">Professional Services</span><br>
+      With a Personal Touch
+    </h1>
+    <p class="text-lg md:text-xl mb-8 max-w-xl mx-auto">
+      Trusted chartered accountants providing comprehensive financial solutions to help your business thrive in today's complex regulatory environment.
+    </p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <a href="https://wa.me/917389968331" class="px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1">
+        Reach out on Whatsapp
+      </a>
+      <a href="#services" class="px-8 py-3 border border-white text-white font-medium rounded-lg hover:bg-white hover:text-primary-600 transition-all">
+        Our Services
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  const images = document.querySelectorAll('#slider img');
+  let index = 0;
+
+  setInterval(() => {
+    images.forEach(img => {
+      img.classList.remove('opacity-100');
+      img.classList.add('opacity-0');
+    });
+    index = (index + 1) % images.length;
+    images[index].classList.remove('opacity-0');
+    images[index].classList.add('opacity-100');
+  }, 4000);
+</script>
+
+
+
+  <!-- Services Section -->
+ <section id="services" class="py-20 bg-gray-50 dark:bg-gray-800">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <span class="inline-block px-3 py-1 text-xs font-semibold bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 rounded-full mb-4">
+        Welcome
+      </span>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        Welcome to <span class="gradient-text">S. S. CHAUHAN & COMPANY</span>
+      </h2>
+      <p class="mx-auto text-lg text-gray-600 dark:text-gray-300 text-justify">
+        S. S. CHAUHAN & COMPANY, based in Jabalpur, Madhya Pradesh, has built a strong reputation for delivering exceptional accounting, auditing, tax advisory, and consultancy services. With a focus on tailoring solutions to each client’s unique business needs, we ensure every report reflects credibility and trustworthiness. Serving a diverse range of clients, including corporations, SMEs, NGOs, trusts, and societies, we offer professional services with a personal touch. Situated in the heart of India, our strategic location enables us to serve clients across the entire country, providing reliable, efficient, and effective solutions that drive long-term success. Let us be your trusted partner in navigating your business journey.
+      </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Service 1 -->
+        <div class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+          <div class="h-48 bg-primary-500 overflow-hidden">
+            <img src="/assets/images/service-img/choose.jpg?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                 alt="Audit Services" 
+                 class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center mb-4">
+              <div class="p-3 bg-primary-100 dark:bg-primary-900 rounded-lg mr-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 dark:text-white">Why Choose us?</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              Bringing top-quality services right to your doorstep, where excellence meets convenience!
+            </p>
+                        
+          </div>
+        </div>
+        
+        <!-- Service 2 -->
+        <div class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+          <div class="h-48 bg-blue-500 overflow-hidden">
+            <img src="/assets/images/service-img/client.jpg?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" 
+                 alt="Tax Services" 
+                 class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center mb-4">
+              <div class="p-3 bg-blue-100 dark:bg-blue-900 rounded-lg mr-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 dark:text-white">Tailored to Client's Needs</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              Our core mission is to deliver exceptional value to both Indian and international companies through personalized, seamless, world-class, and cost-effective solutions.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Service 3 -->
+        <div class="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+          <div class="h-48 bg-indigo-500 overflow-hidden">
+            <img src="/assets/images/service-img/special.jpg?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" 
+                 alt="Business Advisory" 
+                 class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center mb-4">
+              <div class="p-3 bg-indigo-100 dark:bg-indigo-900 rounded-lg mr-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600 dark:text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 dark:text-white">Leveraging Technology</h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              In addition to our partner-led services, our key strengths include:</p>
+            <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+              <li class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-indigo-600 dark:text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                A proven track record of delivering innovative business solutions with actionable insights.
+              </li>
+              <li class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-indigo-600 dark:text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                A team of seasoned professionals with extensive expertise.
+              </li>
+              <li class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-indigo-600 dark:text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                The capability to provide real-time responses and ensure on-time delivery.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="/services/" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary-600 hover:bg-primary-700 transition-colors">
+          View All Services
+          <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 -mr-1 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- CTA Section -->
+  <section class="py-20 bg-gray-50 dark:bg-gray-800">
+    <div class="container mx-auto px-6">
+      <div class="bg-white dark:bg-gray-700 rounded-2xl shadow-xl p-8 md:p-12" data-aos="fade-up">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-2/3 mb-8 md:mb-0">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">Ready to Transform Your Financial Strategy?</h2>
+            <p class="text-gray-600 dark:text-gray-300">
+              Schedule consultation with our experts to discuss how we can help your business thrive.
+            </p>
+          </div>
+          <div class="md:w-1/3 flex justify-center md:justify-end">
+            <a href="/contact/" class="px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1">
+              Get Started Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+<section id="updates" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 h-[400px] border border-gray-300 rounded-lg shadow overflow-hidden bg-white" data-aos="fade-up">
+
+      <!-- LEFT COLUMN: RSS Feed (Auto-scroll) -->
+      <aside class="relative p-4 overflow-hidden">
+        <h2 class="text-xl font-semibold mb-4 border-b pb-2 text-gray-800">📌 Latest News</h2>
+        <div class="scroll-wrapper h-[calc(100%-3.5rem)]">
+          <div id="rss-feed" class="scroll-content space-y-4">
+            <!-- Items will be loaded here dynamically -->
+          </div>
+        </div>
+      </aside>
+
+      <!-- RIGHT COLUMN: PDF List -->
+<main class="bg-gray-100 p-6 overflow-y-auto h-full">
+  <h2 class="text-xl font-semibold mb-4 border-b pb-2 text-gray-800">📎 Important Documents</h2>
+  <ul class="list-disc list-inside space-y-2 text-blue-800 font-medium">
+    <li>
+      <a href="https://www.mca.gov.in/content/mca/global/en/acts-rules/ebooks/acts.html?act=NTk2MQ==" target="_blank" class="hover:underline">📄 Companies Act, 2013</a>
+    </li>
+    <li>
+      <a href="https://incometaxindia.gov.in/Pages/acts/income-tax-act.aspx" target="_blank" class="hover:underline">📄 Income Tax Act, 1961</a>
+    </li>
+    <li>
+      <a href="https://www.indiabudget.gov.in/doc/Finance_Bill.pdf" target="_blank" class="hover:underline">📄 Finance Bill, 2025</a>
+    </li>
+    <li>
+      <a href="https://www.indiabudget.gov.in/doc/bh1.pdf" target="_blank" class="hover:underline">📄 Budget 2025 Highlights</a>
+    </li>
+  </ul>
+</main>
+
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <!-- Scripts -->
+<script>
+  fetch("/components/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+      if (window.initMobileMenu) initMobileMenu(); // ✅ now safe to call!
+      if (window.Alpine) Alpine.initTree(document.getElementById("header"));
+    });
+
+    fetch("/components/footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+
+<script>
+  const feeds = [
+    {
+      title: "🇮🇳 India News",
+      url: "https://rss2json.com/api.json?rss_url=https://feeds.feedburner.com/ndtvnews-top-stories"
+    },
+    {
+      title: "🌍 Global News",
+      url: "https://rss2json.com/api.json?rss_url=http://feeds.bbci.co.uk/news/world/rss.xml"
+    }
+  ];
+
+  const container = document.getElementById('rss-feed');
+
+  feeds.forEach(feed => {
+    fetch(feed.url)
+      .then(res => res.json())
+      .then(data => {
+        const items = data.items.slice(0, 3); // limit to 3 per source
+        let sectionHTML = `<h3 class="text-base font-bold text-gray-700 mb-2">${feed.title}</h3>`;
+        items.forEach(item => {
+          sectionHTML += `
+            <div class="bg-blue-50 p-3 rounded shadow mb-2">
+              <a href="${item.link}" target="_blank" class="font-semibold text-blue-800 block">${item.title}</a>
+              <p class="text-xs text-gray-600">${new Date(item.pubDate).toLocaleDateString()}</p>
+            </div>
+          `;
+        });
+        container.innerHTML += sectionHTML;
+      });
+  });
+</script>
+
+<script src="/assets/js/main.js"></script>
+  
+
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

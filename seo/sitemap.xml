@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home Page -->
+  <url>
+    <loc>https://www.sschauhan.co.in/</loc>
+    <priority>1.00</priority>
+  </url>
+
+  <!-- About -->
+  <url>
+    <loc>https://www.sschauhan.co.in/about/</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Services -->
+  <url>
+    <loc>https://www.sschauhan.co.in/services/</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Resources -->
+  <url>
+    <loc>https://www.sschauhan.co.in/resources/</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Tools for CA -->
+  <url>
+    <loc>https://www.sschauhan.co.in/resources/opening-balance/</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Important Links -->
+  <url>
+    <loc>https://www.sschauhan.co.in/resources/important-links/</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Blog -->
+  <url>
+    <loc>https://www.sschauhan.co.in/blog/</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://www.sschauhan.co.in/contact/</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Careers -->
+  <url>
+    <loc>https://www.sschauhan.co.in/careers/</loc>
+    <priority>0.60</priority>
+  </url>
+
+  <!-- Client Section -->
+  <url>
+    <loc>https://www.sschauhan.co.in/client-portal/</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- Downloads (Public) -->
+  <url>
+    <loc>https://www.sschauhan.co.in/client-portal/downloads/</loc>
+    <priority>0.60</priority>
+  </url>
+
+    <!-- Submit Docs -->
+  <url>
+    <loc>https://www.sschauhan.co.in/client-portal/submit-documents/</loc>
+    <priority>0.60</priority>
+  </url>
+
+<!-- Privacy -->
+  <url>
+    <loc>https://www.sschauhan.co.in/privacy/</loc>
+    <priority>0.70</priority>
+  </url>
+
+</urlset>

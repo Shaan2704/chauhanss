@@ -1,0 +1,101 @@
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #0ea5e9 0%, #6366f1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass-card {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.shape-blob {
+  border-radius: 30% 50% 20% 40%;
+  animation: transform 20s ease-in-out infinite both alternate;
+}
+
+@keyframes transform {
+  0%, 100% { border-radius: 30% 50% 20% 40%; }
+  33% { border-radius: 50% 30% 40% 20%; }
+  66% { border-radius: 40% 20% 30% 50%; }
+}
+
+/* Spacer section */
+.custom-spacer {
+  margin-top: 4rem; /* This is equivalent to Tailwind's mt-40 */
+  height: 3.5rem;
+}
+
+
+.page-heading {
+  background-color: #1e40af !important;/* Tailwind's bg-blue-800 */
+  color: white !important; 
+  padding: 1rem 1rem; /* Generous padding for balanced look */
+  text-align: center;
+  margin-bottom: 2rem; /* Tailwind's mb-8 */
+  border-radius: 0.5rem; /* Rounded corners for modern aesthetic */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  background-image: linear-gradient(145deg, #1e40af, #2563eb); /* Subtle gradient effect from blue-800 to blue-600 */
+}
+
+.page-heading h1 {
+  font-size: 2.5rem;  /* Larger than Tailwind's text-4xl */
+  font-weight: 700;  /* Bold for emphasis */
+  font-family: 'Segoe UI', Tahoma, Geneva, sans-serif; /* Modern font stack */
+  letter-spacing: -0.5px; /* Tight letter spacing for clean look */
+  margin: 0; /* Remove default margin */
+  text-transform: normal; /* Professional, structured feel */
+  line-height: 1.3; /* Ensures readability */
+}
+
+.page-heading p {
+  font-size: 1.125rem; /* Slightly larger than default, like Tailwind's text-lg */
+  font-family: 'Segoe UI', Tahoma, Geneva, sans-serif; /* Consistent font style */
+  margin-top: 1rem; /* Adds space between heading and paragraph */
+  color: rgba(255, 255, 255, 0.85); /* Lighter white for better contrast */
+  line-height: 1.6; /* Slightly looser line-height for readability */
+  max-width: 800px; /* Limits the width for better readability */
+  margin-left: auto;
+  margin-right: auto; /* Centers the paragraph */
+}
+
+.page-heading h1::after {
+  content: "";
+  display: block;
+  width: 50px; /* Decorative line beneath heading */
+  height: 4px;
+  background-color: white;
+  margin: 1rem auto 0;
+  border-radius: 10px;
+}
+
+.scroll-wrapper {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.scroll-content {
+  animation: scroll-vertical 20s linear infinite;
+}
+@keyframes scroll-vertical {
+  0% { transform: translateY(0%); }
+  100% { transform: translateY(-50%); }
+}
+.scroll-content:hover {
+  animation-play-state: paused;
+  cursor: pointer;
+}
+
+[x-cloak] { display: none !important; }
