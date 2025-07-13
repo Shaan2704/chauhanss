@@ -1,0 +1,408 @@
+/* General Styling & Variables */
+:root {
+    --desktop-bg: #2d3436; /* Dark slate for desktop */
+    --wallpaper-gradient: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); /* Subtle dark gradient */
+    --icon-bg: rgba(44, 62, 80, 0.7); /* Dark semi-transparent for icons */
+    --icon-hover-bg: rgba(52, 73, 94, 0.9); /* Darker on hover */
+    --text-color: #ecf0f1; /* Light text */
+    --accent-color: #3498db; /* Blue for highlights */
+    --secondary-accent: #2ecc71; /* Green for active/success */
+    --border-color: #34495e; /* Darker border */
+    --shadow-light: rgba(0, 0, 0, 0.2);
+    --shadow-medium: rgba(0, 0, 0, 0.4);
+    --shadow-heavy: rgba(0, 0, 0, 0.6);
+    --taskbar-bg: rgba(0, 0, 0, 0.5); /* Semi-transparent black for taskbar */
+    --taskbar-item-hover: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--desktop-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Changed from height: 100vh; if it was set */
+    overflow-x: hidden; /* Prevent horizontal scroll, but allow vertical if needed for content */
+    /* Removed redundant overflow: hidden; from body if present */
+}
+
+/* Desktop Wrapper - Simulates the screen */
+.desktop-wrapper {
+    width: 100vw;
+    min-height: 100vh; /* IMPORTANT: Use min-height for mobile responsiveness */
+    display: flex;
+    flex-direction: column; /* Ensure header, main, footer stack vertically */
+    position: relative;
+    overflow: hidden; /* Keep this to prevent wallpaper overflow */
+    background-color: var(--desktop-bg); /* Fallback */
+}
+
+.wallpaper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--wallpaper-gradient);
+    z-index: 0;
+}
+
+/* Header - Top bar of the desktop */
+.desktop-header {
+    position: relative;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px var(--shadow-medium);
+    backdrop-filter: blur(5px);
+}
+
+.header-title h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.8em;
+    margin: 0;
+    color: var(--accent-color);
+    text-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.header-title p {
+    font-size: 0.9em;
+    color: var(--muted-text);
+    margin: 0;
+}
+
+.header-time {
+    font-size: 1em;
+    color: var(--text-color);
+    font-weight: 300;
+}
+
+/* Main Content - Desktop area for icons */
+.desktop-main {
+    flex-grow: 1; /* Takes up remaining space */
+    padding: 20px;
+    position: relative;
+    z-index: 5;
+    overflow-y: auto; /* Allow scrolling if many icons */
+}
+
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 15px;
+    padding: 10px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.desktop-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px 5px;
+    background-color: var(--icon-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--shadow-light);
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    min-height: 100px;
+}
+
+.desktop-icon:hover {
+    transform: translateY(-5px) scale(1.05);
+    background-color: var(--icon-hover-bg);
+    box-shadow: 0 8px 25px var(--shadow-medium);
+}
+
+.desktop-icon .icon-img {
+    font-size: 3.5em;
+    color: var(--accent-color);
+    margin-bottom: 8px;
+    transition: color 0.2s ease;
+}
+
+.desktop-icon:hover .icon-img {
+    color: var(--secondary-accent);
+}
+
+.desktop-icon span {
+    font-size: 0.85em;
+    font-weight: 400;
+    color: var(--text-color);
+    word-break: break-word;
+    max-width: 90%;
+}
+
+/* Loading Desktop Icon */
+.loading-desktop-icon {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px;
+    font-size: 1.2em;
+    color: var(--muted-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--icon-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--shadow-light);
+}
+
+.loading-desktop-icon .fa-spinner {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+/* Taskbar - Bottom bar of the desktop */
+.desktop-taskbar {
+    position: relative; /* Ensure it behaves normally within the flex container */
+    z-index: 10;
+    background-color: var(--taskbar-bg);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    box-shadow: 0 -2px 10px var(--shadow-medium);
+    backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.taskbar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Color is inherited from 'a' now, or explicitly set on 'a' */
+    font-size: 0.8em;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease; /* Removed color transition here, moved to 'a' */
+}
+
+/* Styles for links INSIDE the taskbar items */
+.taskbar-item a {
+    text-decoration: none; /* Removes the underline */
+    color: inherit;      /* Makes the link text inherit the color from its parent */
+    display: flex;       /* Make the link itself a flex container */
+    flex-direction: column; /* Stack icon and text vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically if needed */
+    width: 100%;         /* Make the link fill the taskbar item */
+    height: 100%;        /* Make the link fill the taskbar item */
+    transition: color 0.2s ease; /* Transition for color changes on hover */
+}
+
+.taskbar-item a:hover {
+    color: var(--secondary-accent); /* Change color on hover for links */
+}
+
+
+.taskbar-item:hover {
+    background-color: var(--taskbar-item-hover);
+}
+
+.taskbar-item.active {
+    color: var(--secondary-accent); /* This will still affect the <i> and <span> directly */
+    background-color: rgba(46, 204, 113, 0.1);
+}
+
+/* IMPORTANT: Target the icon and span inside an <a> for active state if needed */
+.taskbar-item.active a {
+    color: var(--secondary-accent); /* Ensure the link color matches the active state */
+}
+
+
+.taskbar-item i {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+/* APP DRAWER STYLES */
+.app-drawer-menu {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--secondary-bg);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 -5px 20px var(--shadow-heavy);
+    min-width: 200px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 100;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+.app-drawer-menu.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+}
+
+.app-drawer-menu a {
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    text-decoration: none;
+    color: var(--text-color);
+    border-radius: 5px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    margin-bottom: 5px;
+}
+
+.app-drawer-menu a:last-child {
+    margin-bottom: 0;
+}
+
+.app-drawer-menu a:hover {
+    background-color: var(--hover-bg);
+    color: var(--accent-color);
+}
+
+.app-drawer-menu a .drawer-icon {
+    font-size: 1.2em;
+    margin-right: 10px;
+    color: var(--muted-text);
+}
+
+.app-drawer-menu a:hover .drawer-icon {
+    color: var(--accent-color);
+}
+
+.app-drawer-menu a span {
+    font-size: 0.9em;
+    font-weight: 400;
+}
+
+.loading-drawer-item {
+    padding: 10px;
+    text-align: center;
+    color: var(--muted-text);
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .desktop-wrapper {
+        min-height: 100vh; /* Ensure wrapper takes full height on mobile */
+        height: auto; /* Allow content to dictate height beyond min-height */
+    }
+
+    .desktop-header {
+        flex-direction: column;
+        padding: 10px 15px;
+    }
+
+    .header-title h1 {
+        font-size: 1.5em;
+    }
+
+    .header-title p {
+        font-size: 0.8em;
+        margin-bottom: 5px;
+    }
+
+    .header-time {
+        font-size: 0.9em;
+    }
+
+    .desktop-main {
+        padding: 15px;
+    }
+
+    .icon-grid {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        gap: 10px;
+    }
+
+    .desktop-icon {
+        min-height: 80px;
+        padding: 10px 5px;
+    }
+
+    .desktop-icon .icon-img {
+        font-size: 2.5em;
+    }
+
+    .desktop-icon span {
+        font-size: 0.75em;
+    }
+
+    .desktop-taskbar {
+        padding: 8px 10px;
+        gap: 10px;
+    }
+
+    .taskbar-item {
+        font-size: 0.7em;
+        padding: 5px 8px;
+    }
+
+    .taskbar-item i {
+        font-size: 1.2em;
+    }
+
+    .app-drawer-menu {
+        bottom: calc(100% + 5px); /* Adjust position for smaller screens */
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 150px; /* Make sure it's not too wide or too narrow */
+        max-height: 250px; /* Adjust max height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .desktop-header {
+        padding: 8px 10px;
+    }
+
+    .header-title h1 {
+        font-size: 1.3em;
+    }
+
+    .desktop-main {
+        padding: 10px;
+    }
+
+    .icon-grid {
+        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    }
+
+    .desktop-icon {
+        min-height: 70px;
+        padding: 8px 3px;
+    }
+
+    .desktop-icon .icon-img {
+        font-size: 2em;
+    }
+
+    .desktop-icon span {
+        font-size: 0.7em;
+    }
+
+    .desktop-taskbar {
+        gap: 5px;
+    }
+}

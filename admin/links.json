@@ -1,0 +1,27 @@
+[
+    {
+        "title": "Attendance",
+        "url": "/attendance/",
+        "icon": "fa-users"
+    },
+    {
+        "title": "Project Tracker",
+        "url": "/admin/status/",
+        "icon": "fa-tasks"
+    },
+    {
+        "title": "GST Credentials",
+        "url": "https://docs.google.com/spreadsheets/d/1F-Da8P6fy4zXR0F0Fjl7eZMj6-HfCrXP_8cvxNRscdY/edit?usp=sharing",
+        "icon": "fa-file-excel"
+    },
+    {
+        "title": "Income Tax Act",
+        "url": "https://incometaxindia.gov.in/pages/acts/income-tax-act.aspx",
+        "icon": "fa-book"
+    },
+    {
+        "title": "Companies Act",
+        "url": "/mca/",
+        "icon": "fa-book-open"
+    }
+]

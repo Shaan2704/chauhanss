@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Document Mngt Drive",
+        "url": "https://drive.google.com/drive/folders/1KKNoMeVI4NOg8TkNmC_mjsKkcvu81llp",
+        "icon": "fa-share-nodes"
+    },
+    {
+        "title": "Document Mngt Excel",
+        "url": "https://docs.google.com/spreadsheets/d/1B8Kg2c_mBxIpOxdj7EE6zWKGB1eT-lbDUdrQcx7t27E/edit?gid=0#gid=0",
+        "icon": "fa-share-nodes"
+    },
+    {
+        "title": "Folder Link Script",
+        "url": "https://script.google.com/home/projects/1LQcAM0CQzb45uzZbnrbKRVhLk-jqB5-2gzfwmjNfjoGAL4uD9J9BEBMv/edit",
+        "icon": "fa-share-nodes"
+    }
+]

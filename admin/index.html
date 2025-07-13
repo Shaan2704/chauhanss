@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | S. S. CHAUHAN</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght=400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="desktop-wrapper">
+        <div class="wallpaper"></div> <!-- Background for the desktop -->
+
+        <header class="desktop-header">
+            <div class="header-title">
+                <h1>S. S. CHAUHAN & COMPANY</h1>
+                <p>Chartered Accountants</p>
+            </div>
+            <div class="header-time" id="currentTime"></div>
+        </header>
+
+        <main class="desktop-main">
+            <div class="icon-grid" id="linksGrid">
+                <!-- Links will be dynamically loaded here by JavaScript -->
+                <div class="loading-desktop-icon">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <span>Loading...</span>
+                </div>
+            </div>
+        </main>
+
+        <footer class="desktop-taskbar">
+            <div class="taskbar-item">
+                <a href="/">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+                </a>
+            </div>
+            <div class="taskbar-item active">
+                <i class="fas fa-th-large"></i>
+                <span>Apps</span>
+            </div>
+            <div class="taskbar-item active" id="appDrawerTaskbarItem">
+                <i class="fas fa-th-large"></i>
+                <span>Document Management</span>
+                <div class="app-drawer-menu" id="appDrawerMenu">
+                    <div class="loading-drawer-item">
+                        <i class="fas fa-spinner fa-spin"></i> Loading...
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
