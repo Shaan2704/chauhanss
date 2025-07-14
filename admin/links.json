@@ -5,6 +5,11 @@
         "icon": "fa-users"
     },
     {
+        "title": "Attendance Sheet",
+        "url": "https://docs.google.com/spreadsheets/d/19oZSeMHGA3swi0nQzwcKkOob2LQa4Q1i5nCCsz6xrCw/edit?usp=sharing",
+        "icon": "fa-box-archive"
+    },
+    {
         "title": "Project Tracker",
         "url": "/admin/status/",
         "icon": "fa-tasks"
