@@ -22,7 +22,7 @@ body {
     max-width: 800px;
     width: 100%;
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* Ensures nothing spills out of the card */
 }
 
 .business-card::before {
@@ -40,7 +40,8 @@ body {
     align-items: center;
     gap: 30px;
     margin-bottom: 30px;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Allows items to wrap to the next line if space is limited */
+    justify-content: center; /* Center items when they wrap on small screens */
 }
 
 .logo-section {
@@ -49,6 +50,7 @@ body {
     align-items: center;
     gap: 10px;
     margin-bottom: 20px;
+    text-align: center; /* Ensures text inside is centered */
 }
 
 .ca-logo {
@@ -89,17 +91,22 @@ body {
     margin-top: 5px;
 }
 
-.firm-profession-tagline { /* NEW STYLE */
+.firm-profession-tagline {
     font-family: 'Britannic Bold', Impact, sans-serif;
-    font-size: 1.3em; /* Adjust as needed */
-    color: #000000; /* Adjust color as needed */
-    margin-top: -10px; /* Pull it slightly closer to the firm name */
-    font-weight: normal; /* Britannic Bold is already heavy */
+    font-size: 1.1em;
+    color: #000000;
+    margin-top: -5px;
+    font-weight: normal;
 }
-
 
 .photo-container {
     position: relative;
+    /* Added flex for centering if photo-placeholder is used */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Ensure it doesn't shrink below its content */
+    flex-shrink: 0;
 }
 
 .profile-photo {
@@ -128,7 +135,8 @@ body {
 
 .name-section {
     flex: 1;
-    min-width: 300px;
+    /* Removed min-width here - let flexbox handle sizing */
+    text-align: center; /* Center text when card-header wraps */
 }
 
 .name {
@@ -137,11 +145,13 @@ body {
     color: #8b0000;
     margin-bottom: 10px;
     text-shadow: 2px 2px 4px rgba(139, 0, 0, 0.3);
+    /* Allow name to wrap if too long */
+    word-break: break-word;
 }
 
 .designation {
     font-size: 1.2em;
-    color: #0f1414;
+    color: #121414;
     font-weight: bolder;
     margin-bottom: 20px;
 }
@@ -183,7 +193,7 @@ body {
 }
 
 .contact-info {
-    flex: 1;
+    flex: 1; /* Allows contact info to take available space */
 }
 
 .contact-label {
@@ -196,6 +206,9 @@ body {
     font-size: 1.1em;
     color: #2c3e50;
     font-weight: 600;
+    /* Crucial for long strings like emails/addresses */
+    word-break: break-word; /* Breaks long words if they exceed the container */
+    overflow-wrap: break-word; /* Alternative/modern property for word-break */
 }
 
 .social-links-label {
@@ -297,7 +310,7 @@ body {
 /* Responsive Media Queries */
 @media (max-width: 768px) {
     .business-card {
-        padding: 30px 20px;
+        padding: 30px 20px; /* Reduced horizontal padding for smaller screens */
     }
 
     .logo-section {
@@ -313,7 +326,7 @@ body {
         font-size: 1.1em;
     }
 
-    .firm-profession-tagline { /* Adjust font size for tagline on small screens */
+    .firm-profession-tagline {
         font-size: 0.9em;
     }
 
@@ -323,8 +336,13 @@ body {
         gap: 20px;
     }
 
+    .name-section {
+        min-width: auto; /* Remove any lingering min-width that could cause overflow */
+    }
+
     .name {
-        font-size: 2em;
+        font-size: 1.8em; /* Slightly reduced for better fit on phones */
+        line-height: 1.2; /* Adjust line height if name wraps to two lines */
     }
 
     .designation {
@@ -332,7 +350,11 @@ body {
     }
 
     .contact-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Ensures contact items stack vertically */
+    }
+
+    .contact-item {
+        padding: 10px; /* Slightly reduced padding for contact items */
     }
 
     .action-buttons {
@@ -342,6 +364,38 @@ body {
 
     .action-btn {
         width: 100%;
-        max-width: 280px;
+        max-width: 280px; /* Limits max width of buttons */
     }
+}
+
+/* Optional: Even smaller screen adjustments (e.g., iPhone 5/SE width) */
+@media (max-width: 380px) {
+    .business-card {
+        padding: 20px 15px; /* Even tighter padding for very small screens */
+    }
+
+    .name {
+        font-size: 1.6em; /* Further reduce name font size */
+    }
+
+    .firm-name {
+        font-size: 1em;
+    }
+
+    .firm-profession-tagline {
+        font-size: 0.85em;
+    }
+}
+/* Remove hyperlink styling */
+a.no-style {
+    color: inherit; /* Inherit color from parent element */
+    text-decoration: none; /* Remove underline */
+    
+}
+
+/* If you have specific hyperlinks in your contact info, you might want to target them more directly */
+.contact-value a {
+    color: inherit;
+    text-decoration: none;
+    
 }
