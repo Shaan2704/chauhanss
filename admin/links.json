@@ -37,12 +37,12 @@
     {
         "title": "Bank of Baroda",
         "url": "https://feba.bobibanking.com/default.htm",
-        "icon": "fa-money-bill-transfer"
+        "icon": "fa-landmark"
     },
     {
         "title": "Bank of India",
         "url": "https://bankofindia.co.in/",
-        "icon": "fa-money-bill-trend-up"
+        "icon": "fa-city"
     },
     {
         "title": "Punjab National Bank",
