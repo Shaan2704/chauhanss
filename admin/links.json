@@ -37,16 +37,16 @@
     {
         "title": "Bank of Baroda",
         "url": "https://feba.bobibanking.com/default.htm",
-        "icon": "fa-landmark"
+        "icon": "fa-coins"
     },
     {
         "title": "Bank of India",
         "url": "https://bankofindia.co.in/",
-        "icon": "fa-city"
+        "icon": "fa-indian-rupee-sign"
     },
     {
         "title": "Punjab National Bank",
         "url": "https://netbanking.pnbibanking.in/corp/AuthenticationController?FORMSGROUP_ID__=AuthenticationFG&__START_TRAN_FLAG__=Y&__FG_BUTTONS__=LOAD&ACTION.LOAD=Y&AuthenticationFG.LOGIN_FLAG=1&BANK_ID=024",
-        "icon": "fa-piggy-bank"
+        "icon": "fa-credit-card"
     }
 ]
