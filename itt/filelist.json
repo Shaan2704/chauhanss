@@ -1,6 +1,4 @@
 [
-  { "name": "Excel 1.xlsx", "type": "excel" },
-  { "name": "Excel_IFORAND.xlsx", "type": "excel" },
-  { "name": "Excel_OR_Function.xlsx", "type": "excel" },
-  { "name": "Excel_AND_Function_Task.xlsx", "type": "excel" }  
+  { "name": "Excel_Combined_Functions_Task.xlsx", "type": "excel" }
+  
 ]
