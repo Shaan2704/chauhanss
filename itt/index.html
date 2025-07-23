@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Download Center</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ✅ Font Awesome without SRI (avoids integrity mismatch) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #f4f7fa;
+      padding: 40px 20px;
+      margin: 0;
+      text-align: center;
+    }
+
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .file-card {
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 220px;
+      text-align: center;
+    }
+
+    .file-card .icon {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .file-card .fa-file-excel { color: #1d6f42; }
+    .file-card .fa-file-word { color: #2a5699; }
+    .file-card .fa-file-alt { color: #444; }
+    .file-card .fa-file-pdf { color: #b30b00; }
+    .file-card .fa-file { color: #888; }
+
+    .file-name {
+      font-weight: bold;
+      color: #333;
+      margin: 10px 0;
+      word-wrap: break-word;
+    }
+
+    .download-button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 14px;
+      background: #3498db;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background 0.3s ease;
+    }
+
+    .download-button:hover {
+      background: #2980b9;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📁 IT Training Stuff</h1>
+  <div class="container" id="fileContainer">
+    <!-- JavaScript will inject file cards here -->
+  </div>
+
+  <footer>&copy; 2025 CA. Shantanu Singh Chauhan</footer>
+
+  <script>
+    fetch('filelist.json')
+      .then(response => response.json())
+      .then(files => {
+        const container = document.getElementById('fileContainer');
+        const iconMap = {
+          excel: 'fa-file-excel',
+          word: 'fa-file-word',
+          text: 'fa-file-alt',
+          pdf: 'fa-file-pdf',
+          other: 'fa-file'
+        };
+
+        files.forEach(file => {
+          const iconClass = iconMap[file.type] || iconMap.other;
+          const card = document.createElement('div');
+          card.className = 'file-card';
+          card.innerHTML = `
+            <div class="icon"><i class="fas ${iconClass}"></i></div>
+            <div class="file-name">${file.name}</div>
+            <a class="download-button" href="files/${file.name}" download>Download</a>
+          `;
+          container.appendChild(card);
+        });
+      })
+      .catch(error => {
+        document.getElementById('fileContainer').innerHTML = '<p>⚠️ Could not load file list.</p>';
+        console.error('Error loading filelist.json:', error);
+      });
+  </script>
+
+</body>
+</html>
