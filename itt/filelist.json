@@ -1,7 +1,8 @@
 [
-    { "name": "Sales.zip", "type": "zip" }
+    { "name": "Sales.zip", "type": "file-zipper" }
   
 ]
+
 
 
 
