@@ -1,10 +1,14 @@
 [
-    { "name": "Sample_-_Superstore.xlsx", "type": "file-excel" }
-  
+  {
+    "name": "Sample_-_Superstore.xlsx",
+    "type": "file-excel"
+  },
+  {
+    "name": "Sales.zip",
+    "type": "file-zip"
+  },
+  {
+    "name": "PowerQuery.zip",
+    "type": "file-zip"
+  }
 ]
-
-
-
-
-
-
