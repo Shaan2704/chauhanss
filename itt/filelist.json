@@ -1,14 +1,6 @@
 [
   {
-    "name": "GSTReconciliation.zip",
-    "type": "file-zip"
-  },
-  {
-    "name": "Sales.zip",
-    "type": "file-zip"
-  },
-  {
-    "name": "PowerQuery.zip",
-    "type": "file-zip"
+    "name": "Sample_-_Superstore.xlsx",
+    "type": "file-excel"
   }
 ]
