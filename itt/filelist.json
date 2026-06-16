@@ -1,6 +1,11 @@
 [
   {
-    "name": "Sample_-_Superstore.xlsx",
+    "name": "Excel_IFORAND",
+    "type": "file-excel"
+  },
+  
+  {
+    "name": "Excel_Tasks_Demo",
     "type": "file-excel"
   }
 ]
