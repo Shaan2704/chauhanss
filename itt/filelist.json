@@ -1,11 +1,11 @@
 [
   {
-    "name": "Excel_IFORAND",
+    "name": "Excel_IFORAND.xlsx",
     "type": "file-excel"
   },
   
   {
-    "name": "Excel_Tasks_Demo",
+    "name": "Excel_Tasks_Demo.xlsx",
     "type": "file-excel"
   }
 ]
