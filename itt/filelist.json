@@ -1,11 +1,5 @@
 [
   {
-    "name": "Excel_IFORAND.xlsx",
-    "type": "file-excel"
-  },
-  
-  {
-    "name": "Excel_Tasks_Demo.xlsx",
-    "type": "file-excel"
-  }
-]
+    "name": "Sales.zip",
+    "type": "file-zip"
+  }]
