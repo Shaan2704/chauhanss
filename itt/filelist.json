@@ -2,4 +2,9 @@
   {
     "name": "Sales.zip",
     "type": "file-zip"
+  },
+
+  {
+    "name": "PowerQuery.zip",
+    "type": "file-zip"
   }]
