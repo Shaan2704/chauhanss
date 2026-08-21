@@ -1,10 +1,15 @@
 [
   {
-    "name": "Sales.zip",
+    "name": "GSTReconciliation.zip",
     "type": "file-zip"
   },
 
   {
-    "name": "PowerQuery.zip",
-    "type": "file-zip"
+    "name": "Power_Query_Day2.xlsx",
+    "type": "file-excel"
+  },
+
+  {
+    "name": "Sales2018-2019.xlsx",
+    "type": "file-excel"
   }]
