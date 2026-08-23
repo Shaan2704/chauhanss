@@ -1,15 +1,6 @@
 [
   {
-    "name": "GSTReconciliation.zip",
-    "type": "file-zipper"
-  },
-
-  {
-    "name": "Power_Query_Day2.xlsx",
+    "name": "Sample_-_Superstore.xlsx",
     "type": "file-excel"
-  },
-
-  {
-    "name": "Sales2018-2019.xlsx",
-    "type": "file-excel"
-  }]
+  }
+]
